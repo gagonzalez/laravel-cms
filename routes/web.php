@@ -23,6 +23,7 @@ Route::get('/prueba', function () {
 
 //Route::get('/contactanos', function () { return view('contactanos');});
 
+Route::get('post/{id}', '\App\Http\Controllers\PostController@show_post');
 Route::get('contactanos', '\App\Http\Controllers\PostController@contactanos');
 
 Route::get('prueba', function(){
