@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Models\Ejemplo;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,5 +49,23 @@ Route::get('prueba', function(){
 
     // $delete = DB::delete('delete from prueba where idprueba = ?', [4]);
     // return $delete;
+
+    //use App\Models\Ejemplo;
+    // $ejemplo = Ejemplo::all();
+    // foreach($ejemplo as $row){
+    //     return $row->campo;
+    // }
+
+    // $ejemplo =Ejemplo::find(5);
+    // return $ejemplo->descripcion;
+
+    // $ejemplo =Ejemplo::where('id', 2)->orderBy('id', 'desc')->take(1)->get();
+
+    // $ejemplo =Ejemplo::findOrfail(58);
+    // return $ejemplo;
+
+    $ejemplo = Ejemplo::where('id', '>', 3)->firstOrfail();
+    return $ejemplo;
+
 
 });
