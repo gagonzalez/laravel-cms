@@ -12,7 +12,8 @@ class Ejemplo extends Model
     protected $fillable =[
         'id',
         'campo',
-        'descripcion'
+        'descripcion',
+        'activo'
     ];
 
 }
