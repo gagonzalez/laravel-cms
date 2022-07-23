@@ -29,8 +29,14 @@ Route::get('contactanos', '\App\Http\Controllers\PostController@contactanos');
 
 Route::get('prueba', function(){
 
-    Ejemplo::where('id', 9)->where('activo', 0)->update(['campo'=>'Leccion 52', 'descripcion'=>'Estamos actualzando con un update', 'activo'=>1]);
+    //Ejemplo::create(['campo'=>'Leccion 51', 'descripcion'=>'Estamos insertando con un create', 'activo'=>0]);
+	
+    //Ejemplo::find(10)->delete();
+    //$Ejemplo = Ejemplo::onlyTrashed()->where('activo', 0)->get();
+    //$Ejemplo = Ejemplo::withTrashed()->where('activo', 0)->restore();
+    //$Ejemplo = Ejemplo::withTrashed()->where('id', 9)->forceDelete();
+    //return $Ejemplo;
 
-    return 'Proccess successfull!';
+    //return 'Proccess successfull!';
 
 });

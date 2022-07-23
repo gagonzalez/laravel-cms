@@ -100,6 +100,11 @@ Route::get('prueba', function(){
 	
 	// Ejemplo::destroy(7);
 
-	Ejemplo::where('id', 3)->delete();
+	// Ejemplo::where('id', 3)->delete();
+	
+	// Ejemplo::where('id', 9)->where('activo', 0)->update(['campo'=>'Leccion 52', 'descripcion'=>'Estamos actualzando con un update', 'activo'=>1]);
+
+	
+
 
 });
