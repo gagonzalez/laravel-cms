@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('ejemplo', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
             $table->string('campo');
             $table->string('descripcion');
+            $table->tinyInteger('activo')->default(0);
             $table->timestamps();
         });
     }

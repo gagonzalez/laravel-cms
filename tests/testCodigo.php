@@ -32,6 +32,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Models\Ejemplo;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -104,7 +105,24 @@ Route::get('prueba', function(){
 	
 	// Ejemplo::where('id', 9)->where('activo', 0)->update(['campo'=>'Leccion 52', 'descripcion'=>'Estamos actualzando con un update', 'activo'=>1]);
 
-	
+	//Ejemplo::create(['campo'=>'Leccion 51', 'descripcion'=>'Estamos insertando con un create', 'activo'=>0]);
+    //Ejemplo::find(9)->delete();
+    //$Ejemplo = Ejemplo::onlyTrashed()->where('activo', 1)->get();
+    //return $Ejemplo;
 
+	//$Ejemplo = Ejemplo::withTrashed()->where('activo', 0)->get();
+    //return $Ejemplo;
+	
+	//$Ejemplo = Ejemplo::withTrashed()->where('activo', 1)->restore();
+	 
+	 
+    //$Ejemplo = Ejemplo::withTrashed()->where('id', 9)->forceDelete();
+	
+	// //Relaciones 1 a 1
+	// return User::find($id)->Ejemplo;	
+	// return User::find($id)->Ejemplo->Campo();
+	
+	// //Relacion inversa
+	// return Ejemplo::find($id)->user->name;
 
 });
