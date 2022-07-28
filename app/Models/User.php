@@ -44,7 +44,13 @@ class User extends Authenticatable
 
     public function ejemplo(){
 
-        return $thishasOne('App\Models\Ejemplo');
+        return $this->hasOne('App\Models\Ejemplo');
+
+    }
+
+    public function ejemplos(){
+
+        return $this->hasMany('App\Models\Ejemplo');
 
     }
 

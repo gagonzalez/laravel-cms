@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Models\Ejemplo;
+use App\Models\User;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,14 +31,11 @@ Route::get('contactanos', '\App\Http\Controllers\PostController@contactanos');
 
 Route::get('prueba', function(){
 
-    //Ejemplo::create(['campo'=>'Leccion 51', 'descripcion'=>'Estamos insertando con un create', 'activo'=>0]);
-	
-    //Ejemplo::find(10)->delete();
-    //$Ejemplo = Ejemplo::onlyTrashed()->where('activo', 0)->get();
-    //$Ejemplo = Ejemplo::withTrashed()->where('activo', 0)->restore();
-    //$Ejemplo = Ejemplo::withTrashed()->where('id', 9)->forceDelete();
-    //return $Ejemplo;
 
-    //return 'Proccess successfull!';
+    $user = User::find(1);
+    
+    foreach($user->ejemplos as $ejem){
+        echo $ejem->campo."<br>";
+    }
 
 });

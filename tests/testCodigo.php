@@ -110,6 +110,7 @@ Route::get('prueba', function(){
     //$Ejemplo = Ejemplo::onlyTrashed()->where('activo', 1)->get();
     //return $Ejemplo;
 
+		
 	//$Ejemplo = Ejemplo::withTrashed()->where('activo', 0)->get();
     //return $Ejemplo;
 	
@@ -124,5 +125,16 @@ Route::get('prueba', function(){
 	
 	// //Relacion inversa
 	// return Ejemplo::find($id)->user->name;
+	
+	// //Relaciones 1 a muchos	
+	$user = User::find(1);
+    
+    foreach($user->ejemplos as $ejem){
+        echo $ejem->campo."<br>";
+    }
+	
+	
+	
+	
 
 });
