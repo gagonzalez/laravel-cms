@@ -20,9 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/prueba', function () {
-    return 'Usted esta aquí!';
-});
 
 //Route::get('/contactanos', function () { return view('contactanos');});
 
@@ -34,8 +31,8 @@ Route::get('prueba', function(){
 
     $user = User::find(1);
     
-    foreach($user->ejemplos as $ejem){
-        echo $ejem->campo."<br>";
+    foreach($user->roles as $role){
+        echo $role->pivot->created_at."<br>";
     }
 
 });
