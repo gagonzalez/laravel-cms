@@ -135,6 +135,25 @@ Route::get('prueba', function(){
 	
 	
 	
+   // $user = User::find(1);
+    
+   // foreach($user->roles as $role){
+   //     echo $role->pivot->created_at."<br>";
+   // }
+    $pais = Pais::find(6);
+    
+    foreach($pais->Ejemplo as $ejem){
+        echo $ejem->campo."<br>";
+    }
 	
+	$user= User::find(1);
+    foreach($user->photos as $photo){
+        echo $photo->path."<br>";
+    }
+	
+	$ejem= Ejemplo::find(1);
+    foreach($ejem->photos as $photo){
+        echo $photo->path."<br>";
+    }
 
 });

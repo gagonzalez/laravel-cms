@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Models\Photo;
 use App\Models\Ejemplo;
 use App\Models\User;
+use App\Models\Pais;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,19 +22,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-//Route::get('/contactanos', function () { return view('contactanos');});
-
 Route::get('post/{id}', '\App\Http\Controllers\PostController@show_post');
 Route::get('contactanos', '\App\Http\Controllers\PostController@contactanos');
 
 Route::get('prueba', function(){
 
-
-    $user = User::find(1);
-    
-    foreach($user->roles as $role){
-        echo $role->pivot->created_at."<br>";
-    }
+    $photo = Photo::findOrFail(2);
+    echo $photo->imageable;
 
 });

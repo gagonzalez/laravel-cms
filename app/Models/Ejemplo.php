@@ -27,4 +27,9 @@ class Ejemplo extends Model
         return $this->belongsTo('App\Models\User');
     }
 
+    public function photos(){
+
+        return $this->morphMany('App\Models\Photo', 'imageable');
+    }
+
 }
